@@ -189,3 +189,17 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+
+# date
+export NOW=$( date '+%F_%H-%M-%S' )
+
+# local bin
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+
+# k8s
+export KUBE_EDITOR="/bin/nano"
+export EDITOR="/bin/nano"
